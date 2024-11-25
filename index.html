@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>موقع الردود التلقائية</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+    input[type="text"] { padding: 10px; width: 300px; }
+    button { padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>مرحبًا بك في موقع صرح الامير للنتائج </h1>
+  <input type="text" id="userInput" placeholder="اكتب هنا...">
+  <button onclick="getResponse()">إرسال</button>
+  <p id="response"></p>
+
+  <script>
+    const responses = {
+      "12": "رضا محمد علي = الدرجات عربي 90  ! رياضيات 99!",
+      "كيف حالك؟": "أنا بخير، شكرًا لسؤالك!",
+      "ما اسمك؟": "اسمي مساعد الذكي."
+    };
+
+    function getResponse() {
+      const input = document.getElementById("userInput").value;
+      const response = responses[input] || "عذرًا، لا أملك ردًا لهذا الإدخال.";
+      document.getElementById("response").innerText = response;
+    }
+  </script>
+</body>
+</html>
